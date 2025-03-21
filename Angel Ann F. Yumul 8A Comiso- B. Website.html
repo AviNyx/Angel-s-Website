@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="description" content="Aesthetic Sari-Sari Store">
+    <meta name="author" content="Angel Ann F. Yumul">
+    <meta http-equiv="refresh" content="30">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Antonio’s Sari-Sari Store</title>
+    <link rel="icon" type="image/png" href="https://shorturl.at/B1spT">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        body {
+            background-color: #f7f7f7;
+            text-align: center;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(45deg, #ff6f61, #ff9f43);
+            color: #fff;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #333;
+        }
+        
+         #home {
+         	background-image: url('https://shorturl.at/FDB3F');
+         	background-size: 100% 100%; 
+         	background-position: center;
+         	background-attachment: fixed; 
+         	padding: 200px 70px 70px;
+        	margin-top: 70px;
+         	color: #fff; 
+         	font-size: 30px; 
+         	text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); 
+        }
+
+
+
+        section {
+            padding: 100px 20px 40px;
+            margin-top: 70px;
+        }
+
+        h1 {
+            margin-bottom: 50px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: #ff6f61;
+        }
+        
+        h2 {
+        	text-align: center;
+            margin-bottom: 100px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 900;
+            color: #ff6f61;
+        }
+
+        .btn {
+            background: #ff6f61;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #ff9f43;
+        }
+
+        .product, .service {
+            background: #fff;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            width: 30%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .product img {
+        width: 200px;  
+        height: 200px; 
+        object-fit: cover; 
+        }
+
+        .product:hover, .service:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+        .product h3 {
+            font-size: 20px;
+            color: #ff6f61;
+        }
+
+        .services-list, .benefits-list {
+            text-align: left;
+            display: inline-block;
+            margin: 20px auto;
+        }
+        
+        #contact {
+            padding: 50px 20px;
+            text-align: center; 
+        }
+
+        #contact h2 {
+            margin-bottom: 20px;
+            color: #ff6f61;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            justify-content: center;
+        }
+
+        .contact-item {
+            font-size: 16px;
+            margin: 10px 0;
+            text-align: left; 
+            max-width: 600px; 
+            width: 100%;
+        }
+
+        .contact-item ul {
+            margin-top: 5px;
+            padding-left: 20px;
+            list-style-type: none;
+            text-align: left; 
+        }
+
+        .contact-item ul li {
+            font-size: 14px;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form input, form textarea {
+            padding: 12px;
+            margin: 10px 0;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            background: #ff6f61;
+            color: white;
+            padding: 12px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background: #ff9f43;
+        }
+        
+        #cart-items {
+            list-style: none;
+            padding: 3px; 
+            margin: 1px auto;
+            text-align: center;
+            max-width: 600px; 
+         }
+
+        #cart-items li {
+            display: float;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding: 5px 0;
+           text-align: center; 
+         }
+
+        #cart-items li span {
+            font-weight: bold;
+         }
+
+        footer {
+            background: #333;
+            color: white;
+            padding: 15px;
+            margin-top: 40px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            /* For tablets and smaller devices */
+        @media screen and (max-width: 768px) {
+            body {
+            font-size: 16px;  
+        }
+        .container {
+        padding: 15px; 
+    }
+}
+
+        /* For mobile devices */
+        @media screen and (max-width: 480px) {
+        body {
+        font-size: 14px;  
+      }
+        .container {
+        padding: 10px;  
+      }
+
+            .logo {
+                font-size: 22px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                margin-top: 10px;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .product {
+                background: #fff;
+                padding: 20px;
+                margin: 20px;
+                border-radius: 10px;
+                display: inline-block;
+                width: 30%;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            
+            .product h3 {
+                font-size: 20px;
+                color: #ff6f61;
+            }
+            
+            form {
+                width: 80%;
+            }
+            
+            .contact-info {
+                align-items: flex-start; 
+            }
+
+            .contact-item {
+                text-align: center; 
+                width: 100%; 
+            }
+
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">🛒Antonio’s Sari-Sari Store</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="javascript:void(0);" id="view-orders" class="btn">View Orders</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h1>Neighborhood Sari-Sari Store</h1>
+        <a href="#contact" class="btn">Order Now</a>
+    </section>
+    <section id="about" style="font-family: Arial, sans-serif; font-size: 16px; line-height: 1.6;">
+    <h1 style="font-size: 2.5em; ">About Us</h1>
+    <p>Antonio’s Sari-Sari Store is more than just a place to shop—it’s a community hub where convenience, quality, and affordability come together. Located at the heart of the neighborhood, our store offers a wide range of everyday essentials that cater to the diverse needs of our customers. Whether you're looking for pantry staples 🛒, snacks 🍫, noodles 🍜, or household items 🏠, we have everything to help you get through your day without the hassle of long trips to bigger supermarkets.</p> <br>
+    <p>We pride ourselves on offering not only affordable prices 💸 but also products that reflect the quality and reliability our customers deserve. Our aim is to make your shopping experience easy and enjoyable with personalized service and a friendly atmosphere 😄. At Antonio’s Sari-Sari Store, we understand that every visit is important, which is why we are committed to providing the best products and services for our neighbors 🤝. We believe in building strong, lasting relationships with our customers, ensuring that they always feel valued and supported when they walk through our doors. Whether it’s a quick snack 🍪, a bulk purchase 🛍️, or a unique item you can’t find anywhere else, Antonio’s Sari-Sari Store is here for all your essential needs 🌟.</p>
+</section>
+
+
+    <section id="products">
+        <h1 style="font-size: 2.5em; ">Our Products</h1>
+        <h2 class="biscuits-heading">Biscuits</h2>
+
+<div class="product">
+    <h3>Wafer Time</h3>
+    <img src="https://www.rebisco.com.ph/658-thickbox_default/wafertime-rich-cream-wafers-choco.jpg" alt="Wafer Time - Rich Cream Wafers Chocolate" style="width:100%; max-width: 200px;">
+    <p>Crispy wafer layers with a creamy filling.</p>
+    <p>&#8369; 20</p>
+    <button class="add-to-cart" data-product="Wafer Time" data-price="20">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Cal Cheese</h3>
+    <img src="https://shopsuki.ph/cdn/shop/files/Untitled_design_-_2024-10-02T180026.182_800x.png?v=1727863433" alt="Cal Cheese - Cheesy Biscuits" style="width:100%; max-width: 200px;">
+    <p>Cheesy-flavored biscuits with a crunchy texture.</p>
+    <p>&#8369; 20</p>
+    <button class="add-to-cart" data-product="Cal Cheese" data-price="20">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Wafello</h3>
+    <img src="https://imartgrocersph.com/wp-content/uploads/2020/09/Wafello-Chocolate-Wafer-53.5g.png" alt="Wafello - Chocolate Wafer" style="width:100%; max-width: 200px;">
+    <p>Thin, crispy wafers with different flavors.</p>
+    <p>&#8369; 20</p>
+    <button class="add-to-cart" data-product="Wafello" data-price="20">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Richoco</h3>
+    <img src="https://shopsuki.ph/cdn/shop/files/106515606_1024x.png?v=1689753701" alt="Richoco - Chocolate Flavored Wafers" style="width:100%; max-width: 200px;">
+    <p>Chocolate-flavored wafers with a rich, creamy filling.</p>
+    <p>&#8369; 20</p>
+    <button class="add-to-cart" data-product="Richoco" data-price="20">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Nissin Wafer</h3>
+    <img src="https://store.iloilosupermart.com/wp-content/uploads/2021/10/465YTY5.jpg" alt="Nissin Wafer - Classic Wafer Biscuits" style="width:100%; max-width: 200px;">
+    <p>Classic wafer biscuits with various flavors.</p>
+    <p>&#8369; 20</p>
+    <button class="add-to-cart" data-product="Nissin Wafer" data-price="20">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Cheese Cake</h3>
+    <img src="https://store.iloilosupermart.com/wp-content/uploads/2020/05/54563.jpg" alt="Cheese Cake - Soft, Cheesy Cakes" style="width:100%; max-width: 200px;">
+    <p>Soft, cheesy-flavored cakes.</p>
+    <p>&#8369; 25</p>
+    <button class="add-to-cart" data-product="Cheese Cake" data-price="25">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Hansel</h3>
+    <img src="https://www.rebisco.com.ph/620-home_default_2x/rebisco-hansel-plain-round-biscuit.jpg" alt="Hansel - Plain Round Biscuits" style="width:100%; max-width: 200px;">
+    <p>Sandwich biscuits with a creamy filling.</p>
+    <p>&#8369; 25</p>
+    <button class="add-to-cart" data-product="Hansel" data-price="25">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Choco Mucho</h3>
+    <img src="https://www.rebisco.com.ph/666-thickbox_default/choco-mucho-cookie-sandwich-double-choco.jpg" alt="Choco Mucho - Chocolate Cookie Sandwich" style="width:100%; max-width: 200px;">
+    <p>Chocolate-covered wafer bars with caramel.</p>
+    <p>&#8369; 30</p>
+    <button class="add-to-cart" data-product="Choco Mucho" data-price="30">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Pretzels</h3>
+    <img src="https://onekanimo.com/image/cache/catalog/Batangas%20Products/Grocery/Comfort%20Foods/Jack'nJillMiniChocolatePretzels28g-550x550.png" alt="Pretzels - Chocolate Mini Pretzels" style="width:100%; max-width: 200px;">
+    <p>Crispy, salted pretzel snacks.</p>
+    <p>&#8369; 15</p>
+    <button class="add-to-cart" data-product="Pretzels" data-price="15">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Fudgee Bar</h3>
+    <img src="https://www.rebisco.com.ph/830-thickbox_default/fudgee-barr-chocolate.jpg" alt="Fudgee Bar - Chocolate Cake Bars" style="width:100%; max-width: 200px;">
+    <p>Moist cake bars with a creamy filling.</p>
+    <p>&#8369; 25</p>
+    <button class="add-to-cart" data-product="Fudgee Bar" data-price="25">Add to Cart</button>
+</div>
+		
+        <h2 class="chips-heading">Chips</h2>
+
+<div class="product">
+    <h3>Loaded</h3>
+    <img src="https://primomart.ph/cdn/shop/products/image_bfe2915a-5182-4675-9279-1c9daa6d8d0b.jpg?v=1589196388" alt="Loaded - Crispy Potato Snacks" style="width:100%; max-width: 200px;">
+    <p>Crispy potato snacks with rich flavors.</p>
+    <p>&#8369; 15</p>
+    <button class="add-to-cart" data-product="Loaded" data-price="15">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Kirei</h3>
+    <img src="https://www.oishi.com.ph/wp-content/uploads/2017/04/kirei-yummy-flakes-60g-copy.png" alt="Kirei - Prawn-flavored Crackers" style="width:100%; max-width: 200px;">
+    <p>Prawn-flavored crackers with a crisp texture.</p>
+    <p>&#8369; 15</p>
+    <button class="add-to-cart" data-product="Kirei" data-price="15">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Chippy</h3>
+    <img src="https://corinthiandistributors.com/wp-content/uploads/2020/03/pixelcut_4-6.png" alt="Chippy - Corn Chips with Barbecue Flavor" style="width:100%; max-width: 200px;">
+    <p>Corn chips with a bold, barbecue flavor.</p>
+    <p>&#8369; 10</p>
+    <button class="add-to-cart" data-product="Chippy" data-price="10">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>La-La</h3>
+    <img src="https://medsgo.ph/images/detailed/33/bfa765fcc03ecc4d1a3660085fe40546_1_-removebg-preview.png" alt="La-La - Fish-flavored Crackers" style="width:100%; max-width: 200px;">
+    <p>Crispy, fish-flavored crackers.</p>
+    <p>&#8369; 15</p>
+    <button class="add-to-cart" data-product="La-La" data-price="15">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Lays</h3>
+    <img src="https://boozy.ph/cdn/shop/products/LaysRegular170g_grande.png?v=1714122601" alt="Lays - Thin and Crispy Potato Chips" style="width:100%; max-width: 200px;">
+    <p>Thin and crispy potato chips in various flavors.</p>
+    <p>&#8369; 15</p>
+    <button class="add-to-cart" data-product="Lays" data-price="15">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Doritos</h3>
+    <img src="https://boozy.ph/cdn/shop/products/DoritosNachoCheese_db3aff06-2269-4602-a920-a17c23813b67.png?v=1714122170" alt="Doritos - Nacho Cheese Corn Chips" style="width:100%; max-width: 200px;">
+    <p>Triangular corn chips with a cheesy kick.</p>
+    <p>&#8369; 15</p>
+    <button class="add-to-cart" data-product="Doritos" data-price="15">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Marty’s</h3>
+    <img src="https://www.oishi.com.ph/wp-content/uploads/2017/04/Martys_SaltVinegar_UA-copy.png" alt="Marty’s - Salt and Vinegar Chicharon" style="width:100%; max-width: 200px;">
+    <p>Vegetarian chicharon (crispy snack).</p>
+    <p>&#8369; 25</p>
+    <button class="add-to-cart" data-product="Marty's" data-price="25">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Cracklings</h3>
+    <img src="https://smmarkets.ph/media/catalog/product/2/0/20106228_oishi_ribbed_crackling_salt_vinegar_90g.png?optimize=low&bg-color=255,255,255&fit=bounds&height=&width=" alt="Cracklings - Salt and Vinegar Pork Rind Snacks" style="width:100%; max-width: 200px;">
+    <p>Crispy pork rind snacks.</p>
+    <p>&#8369; 25</p>
+    <button class="add-to-cart" data-product="Cracklings" data-price="25">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Cheese Rings</h3>
+    <img src="https://pinoygroseri.com/cdn/shop/products/Untitleddesign_8_1024x1024.png?v=1604559140" alt="Cheese Rings - Cheesy Ring-shaped Corn Chips" style="width:100%; max-width: 200px;">
+    <p>Cheesy, ring-shaped corn chips.</p>
+    <p>&#8369; 15</p>
+    <button class="add-to-cart" data-product="Cheese Rings" data-price="15">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Mr. Chips</h3>
+    <img src="https://primomart.ph/cdn/shop/products/image_6a2d676c-310a-4987-b167-166da8ba931e.jpg?v=1589202752" alt="Mr. Chips - Nacho Cheese Corn Chips" style="width:100%; max-width: 200px;">
+    <p>Nacho cheese-flavored corn chips.</p>
+    <p>&#8369; 15</p>
+    <button class="add-to-cart" data-product="Mr. Chips" data-price="15">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Bread Pan</h3>
+    <img src="https://shopmetro.ph/tagaytay-supermarket/wp-content/uploads/2021/04/SM9756146.jpg" alt="Bread Pan - Baked Bread Chips" style="width:100%; max-width: 200px;">
+    <p>Baked bread chips with different flavors.</p>
+    <p>&#8369; 20</p>
+    <button class="add-to-cart" data-product="Bread Pan" data-price="20">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Chiz Curls</h3>
+    <img src="https://www.magicstarsupermarket.com/cdn/shop/products/Chiz-Curls-Pouch-18g-600x750.png?v=1592378846" alt="Chiz Curls - Cheese-flavored Puffed Corn Snacks" style="width:100%; max-width: 200px;">
+    <p>Cheese-flavored puffed corn snacks.</p>
+    <p>&#8369; 15</p>
+    <button class="add-to-cart" data-product="Chiz Curls" data-price="15">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Clover</h3>
+    <img src="https://www.promiselandmart.com/cdn/shop/products/26_1024x1024@2x.jpg?v=1603432403" alt="Clover - Curved Corn Chips" style="width:100%; max-width: 200px;">
+    <p>Curved corn chips with a tangy flavor.</p>
+    <p>&#8369; 15</p>
+    <button class="add-to-cart" data-product="Clover" data-price="15">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Piattos</h3>
+    <img src="https://medsgo.ph/images/detailed/33/Piattos-Cheese-40g.png" alt="Piattos - Hexagonal Cheese Chips" style="width:100%; max-width: 200px;">
+    <p>Hexagonal potato chips with a crispy texture.</p>
+    <p>&#8369; 15</p>
+    <button class="add-to-cart" data-product="Piattos" data-price="15">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Nova</h3>
+    <img src="https://primomart.ph/cdn/shop/products/image_07c50fbc-461a-413a-a82f-a66481255439_554x554.jpg?v=1589203705" alt="Nova - Multi-grain Chips" style="width:100%; max-width: 200px;">
+    <p>Multi-grain chips with a healthier crunch.</p>
+    <p>&#8369; 20</p>
+    <button class="add-to-cart" data-product="Nova" data-price="20">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Vcut</h3>
+    <img src="https://marilenminimart.com/cdn/shop/products/Snacks-and-Cookies_Jack_n-Jill-V-cut-Potato-Chips-Spicy-Barbecue-Flavor-25g.jpg?v=1616654071" alt="Vcut - Spicy Barbecue Potato Chips" style="width:100%; max-width: 200px;">
+    <p>Wavy-cut potato chips with bold flavors.</p>
+    <p>&#8369; 15</p>
+    <button class="add-to-cart" data-product="Vcut" data-price="15">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Pillows</h3>
+    <img src="https://shopmetro.ph/pasay-supermarket/wp-content/uploads/2021/03/SM9287582-4.jpg" alt="Pillows - Chocolate-filled Cereal Snacks" style="width:100%; max-width: 200px;">
+    <p>Chocolate-filled, crunchy cereal snacks.</p>
+    <p>&#8369; 15</p>
+    <button class="add-to-cart" data-product="Pillows" data-price="15">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Moby</h3>
+    <img src="https://nutristateline.com/wp-content/uploads/2024/08/MOB-Y-Caramel-2019.jpg" alt="Moby - Caramel Puffed Corn Snack" style="width:100%; max-width: 200px;">
+    <p>Chocolate-flavored puffed corn snack.</p>
+    <p>&#8369; 15</p>
+    <button class="add-to-cart" data-product="Moby" data-price="15">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Mang Juan</h3>
+    <img src="https://m.media-amazon.com/images/I/81NY8Z9Ub+L.jpg" alt="Mang Juan - Savory Filipino Crispy Snack" style="width:100%; max-width: 200px;">
+    <p>Savory, crispy snacks with a Filipino twist.</p>
+    <p>&#8369; 15</p>
+    <button class="add-to-cart" data-product="Mang Juan" data-price="15">Add to Cart</button>
+</div>
+
+
+		<h2 class="drinks-heading">Coffee, Milk, and Chocolate Drinks</h2>
+
+<div class="product">
+    <h3>Lucky Me! Pancit Canton Original</h3>
+    <img src="https://luckyme.ph/img/products/webp/2023_0418_LuckyMe_Original_80g_Mockup_1stPass.webp" alt="Lucky Me! Pancit Canton Original - Classic stir-fried instant noodles with a savory and slightly sweet taste" style="width:100%; max-width: 200px;">
+    <p>Classic stir-fried instant noodles with a savory and slightly sweet taste.</p>
+    <p>&#8369; 20</p>
+    <button class="add-to-cart" data-product="Lucky Me! Pancit Canton Original" data-price="20">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Lucky Me! Pancit Canton Chilimansi</h3>
+    <img src="https://store.iloilosupermart.com/wp-content/uploads/2020/05/87456456.jpg" alt="Lucky Me! Pancit Canton Chilimansi - A mix of chili and calamansi (Philippine lime) for a tangy and spicy flavor" style="width:100%; max-width: 200px;">
+    <p>A mix of chili and calamansi (Philippine lime) for a tangy and spicy flavor.</p>
+    <p>&#8369; 20</p>
+    <button class="add-to-cart" data-product="Lucky Me! Pancit Canton Chilimansi" data-price="20">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Lucky Me! Pancit Canton Sweet & Spicy</h3>
+    <img src="https://shopmetro.ph/alabang-supermarket/wp-content/uploads/2023/10/SM102169628-8.jpg" alt="Lucky Me! Pancit Canton Sweet & Spicy - A perfect blend of sweetness and heat for a balanced taste" style="width:100%; max-width: 200px;">
+    <p>A perfect blend of sweetness and heat for a balanced taste.</p>
+    <p>&#8369; 20</p>
+    <button class="add-to-cart" data-product="Lucky Me! Pancit Canton Sweet & Spicy" data-price="20">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Lucky Me! Pancit Canton Kalamansi</h3>
+    <img src="https://almerepinoystore.com/wp-content/uploads/2021/05/Lucky-Me-Pancit-Canton-Kalamansi.png" alt="Lucky Me! Pancit Canton Kalamansi - A zesty and citrusy take on the original flavor" style="width:100%; max-width: 200px;">
+    <p>A zesty and citrusy take on the original flavor.</p>
+    <p>&#8369; 20</p>
+    <button class="add-to-cart" data-product="Lucky Me! Pancit Canton Kalamansi" data-price="20">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Lucky Me! Pancit Canton Chicken</h3>
+    <img src="https://filipino.is/wp-content/uploads/2021/12/chicken-na-chicken.jpg" alt="Lucky Me! Pancit Canton Chicken - Light and savory chicken-flavored noodles" style="width:100%; max-width: 200px;">
+    <p>Light and savory chicken-flavored noodles.</p>
+    <p>&#8369; 20</p>
+    <button class="add-to-cart" data-product="Lucky Me! Pancit Canton Chicken" data-price="20">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Lucky Me! Pancit Canton Beef</h3>
+    <img src="https://asiangroceryuk.com/cdn/shop/products/image_53a4dc0c-01af-4c73-bd5d-fbc4de8be229.jpg?v=1682005646" alt="Lucky Me! Pancit Canton Beef - Rich and hearty beef-flavored noodles" style="width:100%; max-width: 200px;">
+    <p>Rich and hearty beef-flavored noodles.</p>
+    <p>&#8369; 20</p>
+    <button class="add-to-cart" data-product="Lucky Me! Pancit Canton Beef" data-price="20">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Nissin Cup Noodles Seafood</h3>
+    <img src="https://images.freshop.ncrcloud.com/1564405684702535843/9d8abc605df0582c55f0c8983841e28d_large.png" alt="Nissin Cup Noodles Seafood - A mix of seafood flavors with a creamy broth" style="width:100%; max-width: 200px;">
+    <p>A mix of seafood flavors with a creamy broth.</p>
+    <p>&#8369; 25</p>
+    <button class="add-to-cart" data-product="Nissin Cup Noodles Seafood" data-price="25">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Nissin Cup Noodles Beef</h3>
+    <img src="https://down-ph.img.susercontent.com/file/e9fa6b86f0ae41168ca206cec7203301" alt="Nissin Cup Noodles Beef - Savory beef-flavored cup noodles with a rich taste" style="width:100%; max-width: 200px;">
+    <p>Savory beef-flavored cup noodles with a rich taste.</p>
+    <p>&#8369; 25</p>
+    <button class="add-to-cart" data-product="Nissin Cup Noodles Beef" data-price="25">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Nissin Cup Noodles Chicken</h3>
+    <img src="https://salangikopu.com/wp-content/uploads/2020/10/Nissin-Cup-Noodles-Chicken-Flavor-40g-SIde.png" alt="Nissin Cup Noodles Chicken - A comforting and lightly seasoned chicken broth" style="width:100%; max-width: 200px;">
+    <p>A comforting and lightly seasoned chicken broth.</p>
+    <p>&#8369; 25</p>
+    <button class="add-to-cart" data-product="Nissin Cup Noodles Chicken" data-price="25">Add to Cart</button>
+</div>
+
+
+ 		
+        
+        <h2 class="noodles-heading">Instant Noodles and Cup Noodles</h2>
+
+<div class="product">
+    <h3>Lucky Me! Pancit Canton Original</h3>
+    <img src="https://luckyme.ph/img/products/webp/2023_0418_LuckyMe_Original_80g_Mockup_1stPass.webp" alt="Lucky Me! Pancit Canton Original - Classic stir-fried instant noodles with a savory and slightly sweet taste" style="width:100%; max-width: 200px;">
+    <p>Classic stir-fried instant noodles with a savory and slightly sweet taste.</p>
+    <p>&#8369; 20</p>
+    <button class="add-to-cart" data-product="Lucky Me! Pancit Canton Original" data-price="20">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Lucky Me! Pancit Canton Chilimansi</h3>
+    <img src="https://store.iloilosupermart.com/wp-content/uploads/2020/05/87456456.jpg" alt="Lucky Me! Pancit Canton Chilimansi - A mix of chili and calamansi (Philippine lime) for a tangy and spicy flavor" style="width:100%; max-width: 200px;">
+    <p>A mix of chili and calamansi (Philippine lime) for a tangy and spicy flavor.</p>
+    <p>&#8369; 20</p>
+    <button class="add-to-cart" data-product="Lucky Me! Pancit Canton Chilimansi" data-price="20">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Lucky Me! Pancit Canton Sweet & Spicy</h3>
+    <img src="https://shopmetro.ph/alabang-supermarket/wp-content/uploads/2023/10/SM102169628-8.jpg" alt="Lucky Me! Pancit Canton Sweet & Spicy - A perfect blend of sweetness and heat for a balanced taste" style="width:100%; max-width: 200px;">
+    <p>A perfect blend of sweetness and heat for a balanced taste.</p>
+    <p>&#8369; 20</p>
+    <button class="add-to-cart" data-product="Lucky Me! Pancit Canton Sweet & Spicy" data-price="20">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Lucky Me! Pancit Canton Kalamansi</h3>
+    <img src="https://almerepinoystore.com/wp-content/uploads/2021/05/Lucky-Me-Pancit-Canton-Kalamansi.png" alt="Lucky Me! Pancit Canton Kalamansi - A zesty and citrusy take on the original flavor" style="width:100%; max-width: 200px;">
+    <p>A zesty and citrusy take on the original flavor.</p>
+    <p>&#8369; 20</p>
+    <button class="add-to-cart" data-product="Lucky Me! Pancit Canton Kalamansi" data-price="20">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Lucky Me! Pancit Canton Chicken</h3>
+    <img src="https://filipino.is/wp-content/uploads/2021/12/chicken-na-chicken.jpg" alt="Lucky Me! Pancit Canton Chicken - Light and savory chicken-flavored noodles" style="width:100%; max-width: 200px;">
+    <p>Light and savory chicken-flavored noodles.</p>
+    <p>&#8369; 20</p>
+    <button class="add-to-cart" data-product="Lucky Me! Pancit Canton Chicken" data-price="20">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Lucky Me! Pancit Canton Beef</h3>
+    <img src="https://asiangroceryuk.com/cdn/shop/products/image_53a4dc0c-01af-4c73-bd5d-fbc4de8be229.jpg?v=1682005646" alt="Lucky Me! Pancit Canton Beef - Rich and hearty beef-flavored noodles" style="width:100%; max-width: 200px;">
+    <p>Rich and hearty beef-flavored noodles.</p>
+    <p>&#8369; 20</p>
+    <button class="add-to-cart" data-product="Lucky Me! Pancit Canton Beef" data-price="20">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Nissin Cup Noodles Seafood</h3>
+    <img src="https://images.freshop.ncrcloud.com/1564405684702535843/9d8abc605df0582c55f0c8983841e28d_large.png" alt="Nissin Cup Noodles Seafood - A mix of seafood flavors with a creamy broth" style="width:100%; max-width: 200px;">
+    <p>A mix of seafood flavors with a creamy broth.</p>
+    <p>&#8369; 25</p>
+    <button class="add-to-cart" data-product="Nissin Cup Noodles Seafood" data-price="25">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Nissin Cup Noodles Beef</h3>
+    <img src="https://down-ph.img.susercontent.com/file/e9fa6b86f0ae41168ca206cec7203301" alt="Nissin Cup Noodles Beef - Savory beef-flavored cup noodles with a rich taste" style="width:100%; max-width: 200px;">
+    <p>Savory beef-flavored cup noodles with a rich taste.</p>
+    <p>&#8369; 25</p>
+    <button class="add-to-cart" data-product="Nissin Cup Noodles Beef" data-price="25">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Nissin Cup Noodles Chicken</h3>
+    <img src="https://salangikopu.com/wp-content/uploads/2020/10/Nissin-Cup-Noodles-Chicken-Flavor-40g-SIde.png" alt="Nissin Cup Noodles Chicken - A comforting and lightly seasoned chicken broth" style="width:100%; max-width: 200px;">
+    <p>A comforting and lightly seasoned chicken broth.</p>
+    <p>&#8369; 25</p>
+    <button class="add-to-cart" data-product="Nissin Cup Noodles Chicken" data-price="25">Add to Cart</button>
+</div>
+
+
+		<h2 class="candies-heading">Candies, Chocolates, and Gums</h2>
+
+<div class="product">
+    <h3>Maxx Menthol Candy</h3>
+    <img src="https://www.pinoyakostore.com/cdn/shop/products/maxx-honey-lemon-candy_5097276f-1ac3-47dd-ad42-ce82b4660aff.jpg?v=1656847444" alt="Maxx Menthol Candy - A refreshing menthol candy with fruity flavors" style="width:100%; max-width: 200px;">
+    <p>A refreshing menthol candy with fruity flavors.</p>
+    <p>&#8369; 10</p>
+    <button class="add-to-cart" data-product="Maxx Menthol Candy" data-price="10">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Halls Candy</h3>
+    <img src="https://zbga.shopsuki.ph/cdn/shop/files/8850338000546_1024x.jpg?v=1704795567" alt="Halls Candy - Strong menthol candy that soothes the throat" style="width:100%; max-width: 200px;">
+    <p>Strong menthol candy that soothes the throat.</p>
+    <p>&#8369; 12</p>
+    <button class="add-to-cart" data-product="Halls Candy" data-price="12">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Snowbear Menthol Candy</h3>
+    <img src="https://jaazmall.myshopify.com/cdn/shop/products/robinsons_167911_167911-1_f4ea070e-3a55-47bf-869e-e37d62b2a4cc.jpg?v=1508168501" alt="Snowbear Menthol Candy - Cooling menthol candy with an intense icy sensation" style="width:100%; max-width: 200px;">
+    <p>Cooling menthol candy with an intense icy sensation.</p>
+    <p>&#8369; 12</p>
+    <button class="add-to-cart" data-product="Snowbear Menthol Candy" data-price="12">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Kopiko Coffee Candy</h3>
+    <img src="https://onlyfilipino.com/cdn/shop/products/image_grande_b737e173-e57a-441d-b88e-014b5160038a.jpg?v=1610483097" alt="Kopiko Coffee Candy - Coffee-flavored hard candy with a strong caffeine kick" style="width:100%; max-width: 200px;">
+    <p>Coffee-flavored hard candy with a strong caffeine kick.</p>
+    <p>&#8369; 15</p>
+    <button class="add-to-cart" data-product="Kopiko Coffee Candy" data-price="15">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>X.O. Coffee Candy</h3>
+    <img src="https://pgmobile.puregold.com.ph/images/4800016475016.jpg" alt="X.O. Coffee Candy - Smooth and creamy coffee-flavored candy" style="width:100%; max-width: 200px;">
+    <p>Smooth and creamy coffee-flavored candy.</p>
+    <p>&#8369; 15</p>
+    <button class="add-to-cart" data-product="X.O. Coffee Candy" data-price="15">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Cloud 9 Choco Candy</h3>
+    <img src="https://medsgo.ph/images/detailed/33/SM101657019-11_1_-removebg-preview.png" alt="Cloud 9 Choco Candy - Chocolate bar with caramel and crunchy peanuts" style="width:100%; max-width: 200px;">
+    <p>Chocolate bar with caramel and crunchy peanuts.</p>
+    <p>&#8369; 20</p>
+    <button class="add-to-cart" data-product="Cloud 9 Choco Candy" data-price="20">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Flat Tops</h3>
+    <img src="https://imartgrocersph.com/wp-content/uploads/2020/09/Flat-Tops-30_s.jpeg" alt="Flat Tops - Small, smooth milk chocolate cups" style="width:100%; max-width: 200px;">
+    <p>Small, smooth milk chocolate cups.</p>
+    <p>&#8369; 15</p>
+    <button class="add-to-cart" data-product="Flat Tops" data-price="15">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Chupa Chups Lollipop</h3>
+    <img src="https://www.ubuy.com.ph/productimg/?image=aHR0cHM6Ly9tLm1lZGlhLWFtYXpvbi5jb20vaW1hZ2VzL0kvNTFIcVl6ZFkzcEwuX1NTNDAwXy5qcGc.jpg" alt="Chupa Chups Lollipop - A variety of flavored lollipops, including fruit and creamy flavors" style="width:100%; max-width: 200px;">
+    <p>A variety of flavored lollipops, including fruit and creamy flavors.</p>
+    <p>&#8369; 10</p>
+    <button class="add-to-cart" data-product="Chupa Chups Lollipop" data-price="10">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Mentos Fruit Chews</h3>
+    <img src="https://i.ebayimg.com/images/g/f44AAOSw2PNgqSlS/s-l1200.jpg" alt="Mentos Fruit Chews - Fruity, chewy candies with a refreshing taste" style="width:100%; max-width: 200px;">
+    <p>Fruity, chewy candies with a refreshing taste.</p>
+    <p>&#8369; 12</p>
+    <button class="add-to-cart" data-product="Mentos Fruit Chews" data-price="12">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>VFresh Chewing Gum</h3>
+    <img src="https://images.freshop.ncrcloud.com/1564405684702542092/2c68c8a8ed2bf228b52e0a1a42409d27_large.png" alt="VFresh Chewing Gum - A sugar-free gum with a strong minty burst" style="width:100%; max-width: 200px;">
+    <p>A sugar-free gum with a strong minty burst.</p>
+    <p>&#8369; 8</p>
+    <button class="add-to-cart" data-product="VFresh Chewing Gum" data-price="8">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Doublemint Chewing Gum</h3>
+    <img src="https://m.media-amazon.com/images/I/61R6+rUuNQL._SL1000_.jpg" alt="Doublemint Chewing Gum - Classic mint gum for long-lasting freshness" style="width:100%; max-width: 200px;">
+    <p>Classic mint gum for long-lasting freshness.</p>
+    <p>&#8369; 8</p>
+    <button class="add-to-cart" data-product="Doublemint Chewing Gum" data-price="8">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Big Babol Bubble Gum</h3>
+    <img src="https://i.ebayimg.com/images/g/cIkAAOSwVnxgzG82/s-l400.jpg" alt="Big Babol Bubble Gum - A soft and chewy bubble gum that’s fun to chew" style="width:100%; max-width: 200px;">
+    <p>A soft and chewy bubble gum that’s fun to chew.</p>
+    <p>&#8369; 10</p>
+    <button class="add-to-cart" data-product="Big Babol Bubble Gum" data-price="10">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Potchi Strawberry Candy</h3>
+    <img src="https://primomart.ph/cdn/shop/products/image_20dd9e90-c551-4d33-a1eb-6543423034c4_554x554.jpg?v=1589556852" alt="Potchi Strawberry Candy - Soft, chewy strawberry-flavored candy" style="width:100%; max-width: 200px;">
+    <p>Soft, chewy strawberry-flavored candy.</p>
+    <p>&#8369; 8</p>
+    <button class="add-to-cart" data-product="Potchi Strawberry Candy" data-price="8">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>White Rabbit Creamy Candy</h3>
+    <img src="https://m.media-amazon.com/images/I/91FKCI+NmJL._SL1500_.jpg" alt="White Rabbit Creamy Candy - Milky and chewy candy with an edible rice paper wrapper" style="width:100%; max-width: 200px;">
+    <p>Milky and chewy candy with an edible rice paper wrapper.</p>
+    <p>&#8369; 10</p>
+    <button class="add-to-cart" data-product="White Rabbit Creamy Candy" data-price="10">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Yake Gummy Candy</h3>
+    <img src="https://i.ebayimg.com/00/s/ODAwWDgwMA==/z/sjwAAOSwiGhjRPib/$_57.PNG?set_id=880000500F" alt="Yake Gummy Candy - Soft and chewy gummy candy in various fruity flavors" style="width:100%; max-width: 200px;">
+    <p>Soft and chewy gummy candy in various fruity flavors.</p>
+    <p>&#8369; 12</p>
+    <button class="add-to-cart" data-product="Yake Gummy Candy" data-price="12">Add to Cart</button>
+</div>
+
+ 
+ 	<h2 class="condiments-heading">Sauces, Vinegars, and Seasonings</h2>
+
+<div class="product">
+    <h3>Datu Puti Soy Sauce</h3>
+    <img src="https://www.magicstarsupermarket.com/cdn/shop/products/193-1933007_datu-puti-soy-sauce-350ml-datu-puti-soy_1200x1200.jpg?v=1592809265" alt="Datu Puti Soy Sauce - A strong and flavorful soy sauce perfect for marinades" style="width:100%; max-width: 200px;">
+    <p>A strong and flavorful soy sauce perfect for marinades.</p>
+    <p>&#8369; 25</p>
+    <button class="add-to-cart" data-product="Datu Puti Soy Sauce" data-price="25">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Datu Puti Vinegar</h3>
+    <img src="https://images.deliveryhero.io/image/darsktores-ph/food/4801668100103.jpg?height=480" alt="Datu Puti Vinegar - A staple in Filipino cooking, offering a strong and tangy taste" style="width:100%; max-width: 200px;">
+    <p>A staple in Filipino cooking, offering a strong and tangy taste.</p>
+    <p>&#8369; 18</p>
+    <button class="add-to-cart" data-product="Datu Puti Vinegar" data-price="18">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Datu Puti Fish Sauce</h3>
+    <img src="https://evegrocer.com/cdn/shop/products/patis_300x300.jpg?v=1659103223" alt="Datu Puti Fish Sauce - A strong and savory fish sauce ideal for seasoning dishes" style="width:100%; max-width: 200px;">
+    <p>A strong and savory fish sauce ideal for seasoning dishes.</p>
+    <p>&#8369; 25</p>
+    <button class="add-to-cart" data-product="Datu Puti Fish Sauce" data-price="25">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Knorr Liquid Seasoning</h3>
+    <img src="https://assets.unileversolutions.com/v1/55742993.png" alt="Knorr Liquid Seasoning - A rich, concentrated seasoning sauce that enhances flavors" style="width:100%; max-width: 200px;">
+    <p>A rich, concentrated seasoning sauce that enhances flavors.</p>
+    <p>&#8369; 15</p>
+    <button class="add-to-cart" data-product="Knorr Liquid Seasoning" data-price="15">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Maggi Magic Sarap</h3>
+    <img src="https://www.maggi.ph/sites/default/files/styles/product_image_tab_landscape_384_768/public/2024-01/20-5163-MAGGI-Magic-Sarap-55g-Front.png?itok=5Vbv9UAH" alt="Maggi Magic Sarap - A seasoning mix that adds a savory umami boost to dishes" style="width:100%; max-width: 200px;">
+    <p>A seasoning mix that adds a savory umami boost to dishes.</p>
+    <p>&#8369; 12</p>
+    <button class="add-to-cart" data-product="Maggi Magic Sarap" data-price="12">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Ajinomoto Umami Seasoning</h3>
+    <img src="https://pgmobile.puregold.com.ph/images/4801958341100.jpg" alt="Ajinomoto Umami Seasoning - A flavor enhancer that brings out the natural taste of food" style="width:100%; max-width: 200px;">
+    <p>A flavor enhancer that brings out the natural taste of food.</p>
+    <p>&#8369; 10</p>
+    <button class="add-to-cart" data-product="Ajinomoto Umami Seasoning" data-price="10">Add to Cart</button>
+</div>
+
+
+<h2 class="category-heading">Ketchups and All-Purpose Sauces</h2>
+
+<div class="product">
+    <h3>UFC Banana Ketchup</h3>
+    <img src="https://bxtra.ph/images/thumbs/000/0007975_ufc-banana-catsup-320g.jpeg" alt="UFC Banana Ketchup - A sweet and tangy banana-based ketchup" style="width:100%; max-width: 200px;">
+    <p>A sweet and tangy banana-based ketchup.</p>
+    <p>&#8369; 15</p>
+    <button class="add-to-cart" data-product="UFC Banana Ketchup" data-price="15">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Jufran Banana Ketchup</h3>
+    <img src="https://cdn.shopify.com/s/files/1/0147/9445/7136/products/image_1654d5ba-ea3d-42bc-87f6-62a400b5a3f1.jpg?v=1681999748" alt="Jufran Banana Ketchup - A slightly spicier and thicker banana ketchup" style="width:100%; max-width: 200px;">
+    <p>A slightly spicier and thicker banana ketchup.</p>
+    <p>&#8369; 18</p>
+    <button class="add-to-cart" data-product="Jufran Banana Ketchup" data-price="18">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Del Monte Tomato Ketchup</h3>
+    <img src="https://primomart.ph/cdn/shop/products/DEL23_640x640.jpg?v=1640660124" alt="Del Monte Tomato Ketchup - A rich and tangy tomato-based ketchup" style="width:100%; max-width: 200px;">
+    <p>A rich and tangy tomato-based ketchup.</p>
+    <p>&#8369; 15</p>
+    <button class="add-to-cart" data-product="Del Monte Tomato Ketchup" data-price="15">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Mang Tomas All-Purpose Sauce</h3>
+    <img src="https://m.media-amazon.com/images/I/71EwS8i19kL._SL1500_.jpg" alt="Mang Tomas All-Purpose Sauce - A savory and slightly sweet sauce, perfect for lechon and grilled meats" style="width:100%; max-width: 200px;">
+    <p>A savory and slightly sweet sauce, perfect for lechon and grilled meats.</p>
+    <p>&#8369; 20</p>
+    <button class="add-to-cart" data-product="Mang Tomas All-Purpose Sauce" data-price="20">Add to Cart</button>
+</div>
+
+
+<h2 class="category-heading">Spreads and Hot Sauces</h2>
+
+<div class="product">
+    <h3>Reno Liver Spread</h3>
+    <img src="https://shopmetro.ph/angeles-supermarket/wp-content/uploads/2023/10/SM2060347-11.jpg" alt="Reno Liver Spread - A creamy and flavorful liver spread, great for stews and sandwiches" style="width:100%; max-width: 200px;">
+    <p>A creamy and flavorful liver spread, great for stews and sandwiches.</p>
+    <p>&#8369; 12</p>
+    <button class="add-to-cart" data-product="Reno Liver Spread" data-price="12">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Tabasco Hot Sauce</h3>
+    <img src="https://m.media-amazon.com/images/I/61XTOLYfJ3L._SL1500_.jpg" alt="Tabasco Hot Sauce - A world-famous hot sauce made from aged red peppers" style="width:100%; max-width: 200px;">
+    <p>A world-famous hot sauce made from aged red peppers.</p>
+    <p>&#8369; 18</p>
+    <button class="add-to-cart" data-product="Tabasco Hot Sauce" data-price="18">Add to Cart</button>
+</div>
+
+
+<h2 class="category-heading">Mayonnaise and Dressings</h2>
+
+<div class="product">
+    <h3>Lady’s Choice Mayonnaise</h3>
+    <img src="https://bagsakanbyedds.com/cdn/shop/products/6a691751601dd90ca73a159ab58b6944.jpg?v=1665639543" alt="Lady’s Choice Mayonnaise - A rich and creamy mayonnaise, great for spreads and salads" style="width:100%; max-width: 200px;">
+    <p>A rich and creamy mayonnaise, great for spreads and salads.</p>
+    <p>&#8369; 22</p>
+    <button class="add-to-cart" data-product="Lady’s Choice Mayonnaise" data-price="22">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Best Foods Mayonnaise</h3>
+    <img src="https://shopsuki.ph/cdn/shop/products/4808680022888_1024x.jpg?v=1676899951" alt="Best Foods Mayonnaise - A smooth and tangy mayonnaise with a well-balanced taste" style="width:100%; max-width: 200px;">
+    <p>A smooth and tangy mayonnaise with a well-balanced taste.</p>
+    <p>&#8369; 25</p>
+    <button class="add-to-cart" data-product="Best Foods Mayonnaise" data-price="25">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Lady’s Choice Caesar Dressing</h3>
+    <img src="https://shopsuki.ph/cdn/shop/files/102062649_1024x.jpg?v=1730794971" alt="Lady’s Choice Caesar Dressing - A creamy and zesty dressing, perfect for salads and dips" style="width:100%; max-width: 200px;">
+    <p>A creamy and zesty dressing, perfect for salads and dips.</p>
+    <p>&#8369; 20</p>
+    <button class="add-to-cart" data-product="Lady’s Choice Caesar Dressing" data-price="20">Add to Cart</button>
+</div>
+
+
+<h2 class="category-heading">Fermented and Specialty Sauces</h2>
+
+<div class="product">
+    <h3>Barrio Fiesta Bagoong</h3>
+    <img src="https://ever.ph/cdn/shop/files/9000003982-Barrio-Fiesta-Bagoong-Sauteed-Shrimp-Paste-Regular-250g-210414_613ed29a-52be-413e-b60b-dd271508fbf4.jpg?v=1741835630" alt="Barrio Fiesta Bagoong - A flavorful shrimp paste used in Filipino dishes" style="width:100%; max-width: 200px;">
+    <p>A flavorful shrimp paste used in Filipino dishes.</p>
+    <p>&#8369; 30</p>
+    <button class="add-to-cart" data-product="Barrio Fiesta Bagoong" data-price="30">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Lingayen Bagoong</h3>
+    <img src="https://marilenminimart.com/cdn/shop/files/2004881601-1.png?v=1693292243" alt="Lingayen Bagoong - A traditional, salty fermented shrimp paste" style="width:100%; max-width: 200px;">
+    <p>A traditional, salty fermented shrimp paste.</p>
+    <p>&#8369; 28</p>
+    <button class="add-to-cart" data-product="Lingayen Bagoong" data-price="28">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Mama Sita’s Oyster Sauce</h3>
+    <img src="https://imartgrocersph.com/wp-content/uploads/2020/09/Mama-Sita_s-Oyster-Sauce-90g.png" alt="Mama Sita’s Oyster Sauce - A thick, savory oyster sauce for stir-fries and marinades" style="width:100%; max-width: 200px;">
+    <p>A thick, savory oyster sauce for stir-fries and marinades.</p>
+    <p>&#8369; 25</p>
+    <button class="add-to-cart" data-product="Mama Sita’s Oyster Sauce" data-price="25">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Heinz Tomato Ketchup</h3>
+    <img src="https://images.freshop.ncrcloud.com/1564405684714617268/3820ed4d7edace02012e83c5545d62de_large.png" alt="Heinz Tomato Ketchup - A globally recognized tomato ketchup with a balanced sweetness and tanginess" style="width:100%; max-width: 200px;">
+    <p>A globally recognized tomato ketchup with a balanced sweetness and tanginess.</p>
+    <p>&#8369; 15</p>
+    <button class="add-to-cart" data-product="Heinz Tomato Ketchup" data-price="15">Add to Cart</button>
+</div>
+
+
+		<h2 class="personal-care-heading">Shampoo, Conditioner, and Soap</h2>
+
+<div class="product">
+    <h3>Sunsilk Pink</h3>
+    <img src="https://medsgo.ph/images/detailed/31/7c36d3bc5f2c630532ef7b5b2cd8a83e-removebg-preview[1].png" alt="Sunsilk Pink Shampoo - Shampoo for smooth and fragrant hair" style="width:100%; max-width: 200px;">
+    <p>Shampoo for smooth and fragrant hair.</p>
+    <p>&#8369; 50</p>
+    <button class="add-to-cart" data-product="Sunsilk Pink" data-price="50">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Sunsilk Green</h3>
+    <img src="https://static.wixstatic.com/media/659ae1_c2e067654f944177af4dae3d13bf6ed2~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg" alt="Sunsilk Green Shampoo - Shampoo for hair fall control" style="width:100%; max-width: 200px;">
+    <p>Shampoo for hair fall control.</p>
+    <p>&#8369; 50</p>
+    <button class="add-to-cart" data-product="Sunsilk Green" data-price="50">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Head & Shoulders Pink</h3>
+    <img src="https://static.wixstatic.com/media/659ae1_4eeef108f0954b8699998f8f53bde485~mv2.jpg/v1/fill/w_420,h_420,al_c,lg_1,q_80,enc_avif,quality_auto/659ae1_4eeef108f0954b8699998f8f53bde485~mv2.jpg" alt="Head & Shoulders Pink - Anti-dandruff shampoo with floral scent" style="width:100%; max-width: 200px;">
+    <p>Anti-dandruff shampoo with floral scent.</p>
+    <p>&#8369; 70</p>
+    <button class="add-to-cart" data-product="Head & Shoulders Pink" data-price="70">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Head & Shoulders Blue</h3>
+    <img src="https://marilenminimart.com/cdn/shop/products/Screenshot_164_ffc0f957-a041-481c-856b-1600653b1171.png?v=1653643363" alt="Head & Shoulders Blue - Classic anti-dandruff shampoo" style="width:100%; max-width: 200px;">
+    <p>Classic anti-dandruff shampoo.</p>
+    <p>&#8369; 70</p>
+    <button class="add-to-cart" data-product="Head & Shoulders Blue" data-price="70">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Safeguard Cool Menthol</h3>
+    <img src="https://shopsuki.ph/cdn/shop/files/safeguard-bar-soap-arctic-fresh-55g_1_1024x.png?v=1718066930" alt="Safeguard Cool Menthol - Soap with cooling menthol freshness" style="width:100%; max-width: 200px;">
+    <p>Soap with cooling menthol freshness.</p>
+    <p>&#8369; 30</p>
+    <button class="add-to-cart" data-product="Safeguard Cool Menthol" data-price="30">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Safeguard Pure White</h3>
+    <img src="https://primomart.ph/cdn/shop/products/image_33d71d6e-42f0-4421-9def-9d63d07e91e7_512x512.jpg?v=1592019899" alt="Safeguard Pure White - Classic antibacterial white soap" style="width:100%; max-width: 200px;">
+    <p>Classic antibacterial white soap.</p>
+    <p>&#8369; 30</p>
+    <button class="add-to-cart" data-product="Safeguard Pure White" data-price="30">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Bioderm Pink</h3>
+    <img src="https://shopsuki.ph/cdn/shop/files/102054744_69c4b70c-66f7-47de-83c7-1bb16356d639_1024x.png?v=1692932864" alt="Bioderm Pink - Mild antibacterial soap for all skin types" style="width:100%; max-width: 200px;">
+    <p>Mild antibacterial soap for all skin types.</p>
+    <p>&#8369; 25</p>
+    <button class="add-to-cart" data-product="Bioderm Pink" data-price="25">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Bioderm Blue</h3>
+    <img src="https://zbga.shopsuki.ph/cdn/shop/files/104773481_1024x.png?v=1712287457" alt="Bioderm Blue - Refreshing antibacterial soap" style="width:100%; max-width: 200px;">
+    <p>Refreshing antibacterial soap.</p>
+    <p>&#8369; 25</p>
+    <button class="add-to-cart" data-product="Bioderm Blue" data-price="25">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Safeguard Yellow</h3>
+    <img src="https://zbga.shopsuki.ph/cdn/shop/files/4987176026736_1024x.jpg?v=1729852486" alt="Safeguard Yellow - Citrus-scented antibacterial soap" style="width:100%; max-width: 200px;">
+    <p>Citrus-scented antibacterial soap.</p>
+    <p>&#8369; 30</p>
+    <button class="add-to-cart" data-product="Safeguard Yellow" data-price="30">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Safeguard Arctic Blue</h3>
+    <img src="https://shopmetro.ph/pasay-supermarket/wp-content/uploads/2023/09/SM103206142-1-10.jpg" alt="Safeguard Arctic Blue - Cooling antibacterial soap" style="width:100%; max-width: 200px;">
+    <p>Cooling antibacterial soap.</p>
+    <p>&#8369; 30</p>
+    <button class="add-to-cart" data-product="Safeguard Arctic Blue" data-price="30">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Safeguard Pink</h3>
+    <img src="https://medias.watsons.com.ph/publishing/Safeguard_50017231_04-0cS2mvaq-zoom.jpg?version=1733797029" alt="Safeguard Pink - Sweet-scented antibacterial soap" style="width:100%; max-width: 200px;">
+    <p>Sweet-scented antibacterial soap.</p>
+    <p>&#8369; 30</p>
+    <button class="add-to-cart" data-product="Safeguard Pink" data-price="30">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Cream Silk Red</h3>
+    <img src="https://primomart.ph/cdn/shop/products/CK023-600x600_600x600.jpg?v=1601427178" alt="Cream Silk Red - Conditioner for dry and damaged hair" style="width:100%; max-width: 200px;">
+    <p>Conditioner for dry and damaged hair.</p>
+    <p>&#8369; 75</p>
+    <button class="add-to-cart" data-product="Cream Silk Red" data-price="75">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Cream Silk Green</h3>
+    <img src="https://www.panaboonlinegrocery.com/sunshine/assets/uploads/creamsilk-hairfalldef-11ml.png" alt="Cream Silk Green - Conditioner for hair fall protection" style="width:100%; max-width: 200px;">
+    <p>Conditioner for hair fall protection.</p>
+    <p>&#8369; 75</p>
+    <button class="add-to-cart" data-product="Cream Silk Green" data-price="75">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Cream Silk Gold</h3>
+    <img src="https://primomart.ph/cdn/shop/products/image_9aed8a1d-812a-45ac-b046-1e543165c296.jpg?v=1607828154" alt="Cream Silk Gold - Conditioner for intensive repair" style="width:100%; max-width: 200px;">
+    <p>Conditioner for intensive repair.</p>
+    <p>&#8369; 75</p>
+    <button class="add-to-cart" data-product="Cream Silk Gold" data-price="75">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Cream Silk Pink</h3>
+    <img src="https://www.promiselandmart.com/cdn/shop/files/CREAMSILK_PINK_12ml.jpg?v=1710816116" alt="Cream Silk Pink - Conditioner for soft and smooth hair" style="width:100%; max-width: 200px;">
+    <p>Conditioner for soft and smooth hair.</p>
+    <p>&#8369; 75</p>
+    <button class="add-to-cart" data-product="Cream Silk Pink" data-price="75">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Cream Silk Keratin Damage Repair Gold</h3>
+    <img src="https://pgmobile.puregold.com.ph/images/4800888240064.jpg" alt="Cream Silk Keratin Damage Repair Gold - Advanced keratin conditioner for damaged hair" style="width:100%; max-width: 200px;">
+    <p>Advanced keratin conditioner for damaged hair.</p>
+    <p>&#8369; 80</p>
+    <button class="add-to-cart" data-product="Cream Silk Keratin Damage Repair Gold" data-price="80">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Cream Silk Keratin Rebond Straight Pink</h3>
+    <img src="https://cdn.store-assets.com/s/377840/i/47184794.jpeg" alt="Cream Silk Keratin Rebond Straight Pink - Conditioner for straight and manageable hair" style="width:100%; max-width: 200px;">
+    <p>Conditioner for straight and manageable hair.</p>
+    <p>&#8369; 80</p>
+    <button class="add-to-cart" data-product="Cream Silk Keratin Rebond Straight Pink" data-price="80">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Dove Blue</h3>
+    <img src="https://shorturl.at/zfZkc" alt="Dove Blue - Moisturizing shampoo for soft hair" style="width:100%; max-width: 200px;">
+    <p>Moisturizing shampoo for soft hair.</p>
+    <p>&#8369; 80</p>
+    <button class="add-to-cart" data-product="Dove Blue" data-price="80">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Dove Pink</h3>
+    <img src="https://down-ph.img.susercontent.com/file/sg-11134201-7rd45-lwa8vvvfcorn8a" alt="Dove Pink - Gentle and nourishing shampoo" style="width:100%; max-width: 200px;">
+    <p>Gentle and nourishing shampoo.</p>
+    <p>&#8369; 80</p>
+    <button class="add-to-cart" data-product="Dove Pink" data-price="80">Add to Cart</button>
+</div>
+
+
+
+	<h2 class="category-heading">Laundry Powder Detergents</h2>
+
+<div class="product">
+    <h3>Tide Perfect Clean Powder Detergent</h3>
+    <img src="https://imartgrocersph.com/wp-content/uploads/2020/08/Tide-Powder-Perfect-Clean-Original-Scent-80g-500x500.jpeg" alt="Tide Perfect Clean Powder Detergent - Original scent for deep clean" style="width:100%; max-width: 200px;">
+    <p>Provides a deep clean with stain-fighting power for a fresh, clean laundry.</p>
+    <p>&#8369; 200</p>
+    <button class="add-to-cart" data-product="Tide Perfect Clean Powder Detergent" data-price="200">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Surf Powder Detergent</h3>
+    <img src="https://pgmobile.puregold.com.ph/images/4800888221056.jpg?v=84" alt="Surf Powder Detergent - A powder detergent with refreshing scents" style="width:100%; max-width: 200px;">
+    <p>A powder detergent with a range of refreshing scents for a clean, fresh laundry experience.</p>
+    <p>&#8369; 180</p>
+    <button class="add-to-cart" data-product="Surf Powder Detergent" data-price="180">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Ariel Powder Detergent</h3>
+    <img src="https://pgmobile.puregold.com.ph/images/4902430583169.jpg" alt="Ariel Powder Detergent - Powerful cleaning and stain removal" style="width:100%; max-width: 200px;">
+    <p>Offers powerful cleaning and stain removal, leaving your laundry fresh.</p>
+    <p>&#8369; 210</p>
+    <button class="add-to-cart" data-product="Ariel Powder Detergent" data-price="210">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Champion Powder Detergent</h3>
+    <img src="https://primomart.ph/cdn/shop/products/image_130f54c7-168c-40b6-b4d9-bd84d998bdee_640x640.jpg?v=1607062723" alt="Champion Powder Detergent - Stain-fighting formula for clean clothes" style="width:100%; max-width: 200px;">
+    <p>Known for its powerful stain-fighting formula, ensuring clean clothes every time.</p>
+    <p>&#8369; 180</p>
+    <button class="add-to-cart" data-product="Champion Powder Detergent" data-price="180">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Pride Powder Detergent</h3>
+    <img src="https://www.acs-manufacturing.com/wp-content/uploads/2013/10/webpride.png" alt="Pride Powder Detergent - Combines detergent and fabric conditioner" style="width:100%; max-width: 200px;">
+    <p>Combines detergent and fabric conditioner for soft, fresh clothes with every wash.</p>
+    <p>&#8369; 200</p>
+    <button class="add-to-cart" data-product="Pride Powder Detergent" data-price="200">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Bonux Powder Detergent</h3>
+    <img src="https://shorturl.at/2PFmx" alt="Bonux Powder Detergent - Refreshing citrus or floral fragrance" style="width:100%; max-width: 200px;">
+    <p>A refreshing citrus or floral fragrance that leaves clothes smelling fresh.</p>
+    <p>&#8369; 150</p>
+    <button class="add-to-cart" data-product="Bonux Powder Detergent" data-price="150">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Calla Powder Detergent</h3>
+    <img src="https://images.freshop.ncrcloud.com/1564405684702546120/71bf835c9286d4f3040fe93d72c9de73_large.png" alt="Calla Powder Detergent - Available in Lavender, Rose, Lemon, and Floral Fresh scents" style="width:100%; max-width: 200px;">
+    <p>Available in refreshing scents like Lavender, Rose, Lemon, and Floral Fresh.</p>
+    <p>&#8369; 160</p>
+    <button class="add-to-cart" data-product="Calla Powder Detergent" data-price="160">Add to Cart</button>
+</div>
+
+
+		<h2 class="category-heading">Fabric Conditioners</h2>
+
+<div class="product">
+    <h3>Downy Fabric Conditioner - Antibac</h3>
+    <img src="https://assets.landers.ph/catalog/product/1/0/109080-1w.jpg" alt="Downy Fabric Conditioner - Antibac - Eliminates bacteria and provides freshness" style="width:100%; max-width: 200px;">
+    <p>Helps eliminate bacteria and provides long-lasting freshness.</p>
+    <p>&#8369; 150</p>
+    <button class="add-to-cart" data-product="Downy Fabric Conditioner - Antibac" data-price="150">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Downy Fabric Conditioner - Sunrise Fresh</h3>
+    <img src="https://imartgrocersph.com/wp-content/uploads/2020/09/Downy-Fabric-Conditioner-Sunrise-Fresh-25mL.png" alt="Downy Fabric Conditioner - Sunrise Fresh - Leaves clothes soft and fresh" style="width:100%; max-width: 200px;">
+    <p>Leaves clothes soft and smelling like fresh mornings.</p>
+    <p>&#8369; 155</p>
+    <button class="add-to-cart" data-product="Downy Fabric Conditioner - Sunrise Fresh" data-price="155">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Downy Fabric Conditioner - Garden Bloom</h3>
+    <img src="https://cdn.store-assets.com/s/377840/i/17127414.jpeg" alt="Downy Fabric Conditioner - Garden Bloom - Flowery, garden-fresh fragrance" style="width:100%; max-width: 200px;">
+    <p>A flowery, garden-fresh fragrance for your clothes.</p>
+    <p>&#8369; 160</p>
+    <button class="add-to-cart" data-product="Downy Fabric Conditioner - Garden Bloom" data-price="160">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Downy Fabric Conditioner - Expert Kontra Kulob</h3>
+    <img src="https://shopmetro.ph/mandaluyong-supermarket/wp-content/uploads/2021/08/SM103046583-2-1.jpg" alt="Downy Fabric Conditioner - Expert Kontra Kulob - Keeps clothes fresh and free from odors" style="width:100%; max-width: 200px;">
+    <p>Designed to keep clothes fresh and free from unpleasant odors.</p>
+    <p>&#8369; 180</p>
+    <button class="add-to-cart" data-product="Downy Fabric Conditioner - Expert Kontra Kulob" data-price="180">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Surf Fabric Conditioner - Cherry Blossom</h3>
+    <img src="https://imartgrocersph.com/wp-content/uploads/2020/08/Surf-Fabric-Conditioner-Blossom-Fresh-25mL.jpeg" alt="Surf Fabric Conditioner - Cherry Blossom - Delicate cherry blossom fragrance" style="width:100%; max-width: 200px;">
+    <p>A delicate cherry blossom fragrance with every wash.</p>
+    <p>&#8369; 140</p>
+    <button class="add-to-cart" data-product="Surf Fabric Conditioner - Cherry Blossom" data-price="140">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Surf Fabric Conditioner - Perfume</h3>
+    <img src="https://imartgrocersph.com/wp-content/uploads/2020/08/Surf-Fabric-Conditioner-Luxe-Perfume-25mL-.jpg" alt="Surf Fabric Conditioner - Perfume - Long-lasting perfume-inspired scent" style="width:100%; max-width: 200px;">
+    <p>Long-lasting perfume-inspired scent for clothes.</p>
+    <p>&#8369; 150</p>
+    <button class="add-to-cart" data-product="Surf Fabric Conditioner - Perfume" data-price="150">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Surf Fabric Conditioner - Active Fresh</h3>
+    <img src="https://pgmobile.puregold.com.ph/images/8934868187806.jpg" alt="Surf Fabric Conditioner - Active Fresh - Keeps clothes fresh throughout the day" style="width:100%; max-width: 200px;">
+    <p>Keeps clothes feeling fresh and clean throughout the day.</p>
+    <p>&#8369; 145</p>
+    <button class="add-to-cart" data-product="Surf Fabric Conditioner - Active Fresh" data-price="145">Add to Cart</button>
+</div>
+
+
+<h2 class="category-heading">Laundry Stain Removers & Whiteners</h2>
+
+<div class="product">
+    <h3>Zonrox Color Safe Bleach</h3>
+    <img src="https://boholonlinestore.com/wp-content/uploads/2017/01/zonrox_bleach_color_safe_1l-600x600.jpg" alt="Zonrox Color Safe Bleach - Safe for colored fabrics" style="width:100%; max-width: 200px;">
+    <p>A bleach formula that’s safe for colored fabrics, helping to remove stains and brighten clothes.</p>
+    <p>&#8369; 110</p>
+    <button class="add-to-cart" data-product="Zonrox Color Safe Bleach" data-price="110">Add to Cart</button>
+</div>
+
+<div class="product">
+    <h3>Zonrox Regular Bleach</h3>
+    <img src="https://imartgrocersph.com/wp-content/uploads/2020/09/Zonrox-Regular-1L.png" alt="Zonrox Regular Bleach - Traditional bleach for whitening" style="width:100%; max-width: 200px;">
+    <p>Traditional bleach for whitening and disinfecting fabrics.</p>
+    <p>&#8369; 100</p>
+    <button class="add-to-cart" data-product="Zonrox Regular Bleach" data-price="100">Add to Cart</button>
+</div>
+
+        
+    </section>
+    
+    <!-- Orders Section -->
+    <section id="orders">
+    <h2>Your Orders</h2>
+    <ul id="cart-items"></ul>
+    <button onclick="clearCart()">Clear Cart</button>
+    </section>
+    
+    <footer>
+    
+<script>
+    // Initialize cart from localStorage if exists
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Function to update the displayed cart
+    function displayCart() {
+        const cartItemsContainer = document.getElementById('cart-items');
+        cartItemsContainer.innerHTML = '';
+
+        if (cart.length === 0) {
+            cartItemsContainer.innerHTML = '<li>Your cart is empty.</li>';
+        } else {
+            cart.forEach(item => {
+                const li = document.createElement('li');
+                // Format price to PHP currency format
+                const formattedPrice = new Intl.NumberFormat('en-PH', {
+                    style: 'currency',
+                    currency: 'PHP'
+                }).format(item.price);
+                li.textContent = `${item.product} - ${formattedPrice}`;
+                cartItemsContainer.appendChild(li);
+            });
+        }
+    }
+
+    // Add item to cart
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', (event) => {
+            const product = event.target.getAttribute('data-product');
+            const price = parseFloat(event.target.getAttribute('data-price')); // Convert price to float
+            const item = { product, price };
+
+            cart.push(item);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`${product} added to cart!`);
+        });
+    });
+
+    // View Orders button functionality
+    document.getElementById('view-orders').addEventListener('click', () => {
+        const ordersSection = document.getElementById('orders');
+        ordersSection.style.display = 'block';
+        displayCart();
+    });
+
+    // Clear cart functionality
+    function clearCart() {
+        cart = [];
+        localStorage.setItem('cart', JSON.stringify(cart));
+        displayCart();
+    }
+</script>
+
+<section id="services">
+    <h2>Our Services</h2>
+    <ul class="services-list">
+        <li>&#10004; Home Delivery (Selected Items)</li>
+        <li>&#10004; Mobile Load & E-Loading</li>
+        <li>&#10004; Affordable Bulk Orders</li>
+    </ul>
+</section>
+
+<section id="why-choose-us">
+    <h2>Why Choose Us?</h2>
+    <ul class="benefits-list">
+        <li>&#9989; Affordable Prices</li>
+        <li>&#9989; Friendly & Reliable Service</li>
+        <li>&#9989; Convenient Location</li>
+        <li>&#9989; Quality & Fresh Products</li>
+    </ul>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>Need groceries or essentials? Contact us today! We are here to serve you with the best products and services.</p>
+    <p>&#128222; Phone: <strong>0946 491 2073</strong></p>
+    <p>&#128231; Email: <strong>angelannfyumul@email.com</strong></p>
+    <p>&#127968; Address: <strong>Dionicia St, Barangay Sto. Niño, Gapan City, Nueva Ecija, Philippines</strong></p>
+    <p>&#128337; Business Hours:</p>
+    <ul>
+        <li>Monday - Friday: 8:00 AM - 6:00 PM</li>
+        <li>Saturday: 9:00 AM - 4:00 PM</li>
+        <li>Sunday: Closed</li>
+    </ul>
+
+    <p>&#127968;&#65039; Get directions: <a href="https://goo.gl/maps/42Ee4v2qVLFEcSAm6" target="_blank">Click here</a></p>
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30788.8984552966!2d120.93761635889705!3d15.288924055059923!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x339721b52041cfab%3A0xb0b42a7092edc561!2sSto.%20Ni%C3%B1o%20Baranggay%20Hall!5e0!3m2!1sen!2sph!4v1742543214231!5m2!1sen!2sph" 
+            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+
+    <form action="https://formspree.io/f/mqappqkj" method="post">
+        <input type="text" placeholder="Your Name" required>
+        <label for="email">Your Email</label>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+    <footer>
+        <p>&copy; 2025 Antonio's Sari-Sari Store. All rights reserved.</p>
+    </footer>
+
+
+    
+</body>
+</html>
